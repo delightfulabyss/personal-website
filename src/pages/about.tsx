@@ -17,17 +17,17 @@ const About = () => (
   >
     <Content>
       <p>
-        Hi there! My name is Matthew or you can call me delightfulabyss. I&apos;
-        a full-stack web3 developer who specializes in writing decentralized
-        applications using the Ethereum blockchain.
+        Hi there! My name is Matthew or you can call me delightfulabyss.
+        I&apos;m a full-stack Web3 developer who specializes in writing
+        decentralized applications using the Ethereum blockchain.
       </p>
       <p>
         Most of the time you can find me helping to build a decentralized city
-        with <Link href="https://www.creatorcabins.com">Cabin DAO</Link> and
+        with <Link href="https://www.creatorcabins.com">Cabin </Link> and
         learning and earning with the{' '}
         <Link href="https://www.solidityguild.com">Solidity Guild</Link>. When
         I&apos;m not doing that, I enjoy exploratory travel, photography,
-        Dungeons and Dragons and making music.
+        playing Dungeons and Dragons and making music.
       </p>
     </Content>
   </Main>
