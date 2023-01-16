@@ -1,8 +1,7 @@
-// components/terminal-component
-import { io } from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 import { useEffect } from 'react';
 
-var socket;
+let socket: Socket<ServerToClientEvents, ClientToServerEvents>;
 
 function TerminalComponent() {
   useEffect(() => {
@@ -10,15 +9,17 @@ function TerminalComponent() {
       const { Terminal } = await import('xterm');
       const term = new Terminal({ cursorBlink: true });
       let curr_line = '';
-      let entries = [];
+      const entries = [];
       const termPrefix = 'delightfulabyss.eth $ ';
-      term.open(document.getElementById('terminal'));
+      const termDiv = document.getElementById('terminal');
+      if (!termDiv) return;
+      term.open(termDiv);
       term.write(termPrefix);
       term.onKey(({ key, domEvent }) => {
         if (domEvent.keyCode === 13) {
           if (curr_line) {
             entries.push(curr_line);
-            term.write('\r\n' + termPrefix);
+            term.write(`\r\n${termPrefix}`);
             prompt();
           }
         } else if (domEvent.keyCode === 8) {
@@ -33,7 +34,7 @@ function TerminalComponent() {
       });
       const prompt = () => {
         if (curr_line) {
-          socket.emit('prompt', curr_line);
+          socket.emit('question', curr_line);
         }
       };
       term.focus();
@@ -46,14 +47,15 @@ function TerminalComponent() {
         console.log('Socket connected!');
       });
 
-      socket.on('return-data', (msg) => {
-        console.log('Message received: ' + msg);
+      socket.on('answer', (msg: string) => {
+        console.log(`Message received: ${msg}`);
       });
     };
     terminalInitializer();
     socketInitializer();
   }, []);
-  return <div id="terminal"></div>;
+  console.log('render');
+  return <div id="terminal" />;
 }
 
 export default TerminalComponent;

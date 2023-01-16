@@ -231,13 +231,6 @@
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
-"@types/socket.io@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@types/socket.io/-/socket.io-3.0.2.tgz#606c9639e3f93bb8454cba8f5f0a283d47917759"
-  integrity sha512-pu0sN9m5VjCxBZVK8hW37ZcMe8rjn4HHggBN5CbaRTvFwv5jOmuIRZEuddsBPa9Th0ts0SIo3Niukq+95cMBbQ==
-  dependencies:
-    socket.io "*"
-
 "@typescript-eslint/parser@^5.42.0":
   version "5.45.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.45.0.tgz#b18a5f6b3cf1c2b3e399e9d2df4be40d6b0ddd0e"
@@ -1286,6 +1279,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+http@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/http/-/http-0.0.1-security.tgz#3aac09129d12dc2747bbce4157afde20ad1f7995"
+  integrity sha512-RnDvP10Ty9FxqOtPZuxtebw1j4L/WiqNMDtuc1YMH1XQm5TgDRaR1G9u8upL6KD1bXHSp9eSXo/ED+8Q7FAr+g==
+
 ignore@^5.2.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.1.tgz#c2b1f76cb999ede1502f3a226a9310fdfe88d46c"
@@ -1613,6 +1611,11 @@ negotiator@0.6.3:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
+
+net@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/net/-/net-1.0.2.tgz#d1757ec9a7fb2371d83cf4755ce3e27e10829388"
+  integrity sha512-kbhcj2SVVR4caaVnGLJKmlk2+f+oLkjqdKeQlmUtz6nGzOpbcobwVIeSURNgraV/v3tlmGIX82OcPCl0K6RbHQ==
 
 next@13.0.6:
   version "13.0.6"
@@ -2083,7 +2086,7 @@ socket.io-parser@~4.2.1:
     "@socket.io/component-emitter" "~3.1.0"
     debug "~4.3.1"
 
-socket.io@*, socket.io@^4.5.4:
+socket.io@^4.5.4:
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/socket.io/-/socket.io-4.5.4.tgz#a4513f06e87451c17013b8d13fdfaf8da5a86a90"
   integrity sha512-m3GC94iK9MfIEeIBfbhJs5BqFibMtkRk8ZpKwG2QwxV0m/eEhPIV4ara6XCF1LWNAus7z58RodiZlAH71U3EhQ==

@@ -1,17 +1,30 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { Server } from 'socket.io';
+import { Server as IOServer, Socket } from 'socket.io';
+import type { Server as HTTPServer } from 'http';
+import { Socket as NetSocket } from 'net';
 
-const SocketHandler = (req: NextApiRequest, res: NextApiResponse) => {
-  if (res.socket.server.io) {
+interface SocketServer extends HTTPServer {
+  io?: IOServer | undefined;
+}
+
+interface SocketWithIO extends NetSocket {
+  server: SocketServer;
+}
+
+interface NextApiResponseWithSocket extends NextApiResponse {
+  socket: SocketWithIO;
+}
+const SocketHandler = (req: NextApiRequest, res: NextApiResponseWithSocket) => {
+  if (res.socket && res.socket.server && res.socket.server.io) {
     console.log('Socket is already running');
   } else {
     console.log('Socket is initializing...');
-    const io = new Server(req.socket.server);
+    const io = new IOServer<ClientToServerEvents, ServerToClientEvents, SocketData>(res.socket.server);
     res.socket.server.io = io;
 
-    io.on('connection', (socket) => {
-      socket.on('prompt', (msg) => {
-        socket.emit('return-data', msg);
+    io.on('connection', (socket: Socket) => {
+      socket.on('question', (msg: string) => {
+        socket.emit('answer', msg);
       });
     });
   }
