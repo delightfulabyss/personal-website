@@ -5,14 +5,18 @@ function TerminalComponent() {
     const initializeTerminal = async () => {
       const { Terminal } = await import('xterm');
       const { WebLinksAddon } = await import('xterm-addon-web-links');
+      const { FitAddon } = await import('xterm-addon-fit');
+      const fitAddon = new FitAddon();
       const term = new Terminal({ cursorBlink: true });
       term.loadAddon(new WebLinksAddon());
+      term.loadAddon(fitAddon);
       let curr_line = '';
       const entries = [];
       const termPrefix = '$ ';
       const termDiv = document.getElementById('terminal');
       if (!termDiv) return;
       term.open(termDiv);
+      fitAddon.fit();
       term.write(termPrefix + 'help');
       term.onKey(({ key, domEvent }) => {
         if (domEvent.keyCode === 13) {
@@ -52,7 +56,7 @@ function TerminalComponent() {
     };
     initializeTerminal();
   }, []);
-  return <div id="terminal" className="pt-56" />;
+  return <div id="terminal" className="pt-44" />;
 }
 
 export default TerminalComponent;

@@ -9,7 +9,7 @@ export default function Home() {
         <title>delightfulabyss.eth</title>
         <meta name="description" content="" />
       </Head>
-      <main className="container mx-auto">
+      <main>
         <TerminalComponent />
       </main>
       <footer className=""></footer>
