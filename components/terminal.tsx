@@ -13,12 +13,12 @@ function TerminalComponent() {
       const termDiv = document.getElementById('terminal');
       if (!termDiv) return;
       term.open(termDiv);
-      term.write(termPrefix);
+      term.write(termPrefix + 'help');
       term.onKey(({ key, domEvent }) => {
         if (domEvent.keyCode === 13) {
           if (curr_line) {
             entries.push(curr_line);
-            query();
+            query(curr_line);
           }
         } else if (domEvent.keyCode === 8) {
           if (curr_line) {
@@ -30,9 +30,9 @@ function TerminalComponent() {
           term.write(key);
         }
       });
-      const query = async () => {
-        if (!curr_line) return;
-        const response = await fetch('/api/command?' + new URLSearchParams({ command: curr_line }), {
+      const query = async (query: string) => {
+        if (!query) return;
+        const response = await fetch('/api/command?' + new URLSearchParams({ command: query }), {
           headers: {
             method: 'GET',
           },
@@ -47,6 +47,7 @@ function TerminalComponent() {
         }
         curr_line = '';
       };
+      query('help');
       term.focus();
     };
     initializeTerminal();
