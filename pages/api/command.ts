@@ -11,7 +11,7 @@ const responses = {
   projects:
     'Current projects: https://www.ambire.com, https://www.cabin.city\r\nPrevious projects: https://www.climatefutures.io, https://www.chainsaw.fun',
   contact:
-    'email: mattwatman@gmail.com, twitter: https://www.twitter.com/delightfulabyss, https://www.github.com/delightfulabyss, discord: delightfulabyss.eth#3679',
+    'email: mattwatman@gmail.com,\r\ntwitter: https://www.twitter.com/delightfulabyss,\r\n github: https://www.github.com/delightfulabyss,\r\ndiscord: delightfulabyss.eth#3679',
   clear: 'clear',
 };
 const commandHandler = (req: NextApiRequest, res: NextApiResponse) => {
