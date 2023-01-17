@@ -1,18 +1,15 @@
-import { io, Socket } from 'socket.io-client';
 import { useEffect } from 'react';
-
-let socket: Socket<ServerToClientEvents, ClientToServerEvents>;
 
 function TerminalComponent() {
   useEffect(() => {
-    const initializeTerminalAndSocket = async () => {
+    const initializeTerminal = async () => {
       const { Terminal } = await import('xterm');
       const { WebLinksAddon } = await import('xterm-addon-web-links');
       const term = new Terminal({ cursorBlink: true });
       term.loadAddon(new WebLinksAddon());
       let curr_line = '';
       const entries = [];
-      const termPrefix = ' $ ';
+      const termPrefix = '$ ';
       const termDiv = document.getElementById('terminal');
       if (!termDiv) return;
       term.open(termDiv);
@@ -33,33 +30,28 @@ function TerminalComponent() {
           term.write(key);
         }
       });
-      const query = () => {
-        if (curr_line) {
-          socket.emit('query', curr_line);
-        }
-      };
-      term.focus();
-      await fetch('/api/socket');
-      socket = io();
-
-      socket.on('connect', () => {
-        console.log('Socket connected!');
-      });
-
-      socket.on('answer', (msg: string) => {
-        if (msg === 'clear') {
+      const query = async () => {
+        if (!curr_line) return;
+        const response = await fetch('/api/command?' + new URLSearchParams({ command: curr_line }), {
+          headers: {
+            method: 'GET',
+          },
+        });
+        const { result } = await response.json();
+        if (result === 'clear') {
           term.reset();
           term.write(termPrefix);
         } else {
-          term.write(`\r\n ${msg}`);
+          term.write(`\r\n${result}`);
           term.write(`\r\n${termPrefix}`);
         }
         curr_line = '';
-      });
+      };
+      term.focus();
     };
-    initializeTerminalAndSocket();
+    initializeTerminal();
   }, []);
-  return <div id="terminal" className="pt-52" />;
+  return <div id="terminal" className="pt-56" />;
 }
 
 export default TerminalComponent;
