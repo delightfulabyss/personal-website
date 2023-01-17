@@ -3,7 +3,7 @@ interface ServerToClientEvents {
 }
 
 interface ClientToServerEvents {
-  question: (curr_line: string) => void;
+  query: (curr_line: string) => void;
 }
 
 interface SocketData {
