@@ -1,5 +1,6 @@
-import Head from 'next/head';
-import TerminalComponent from '../components/Terminal';
+import Head from "next/head";
+import TerminalComponent from "../components/Terminal";
+import VideoBackground from "../components/VideoBackground";
 
 export default function Home() {
   return (
@@ -8,9 +9,8 @@ export default function Home() {
         <title>delightfulabyss.eth</title>
         <meta name="description" content="" />
       </Head>
-      <main>
-        <TerminalComponent />
-      </main>
+      <VideoBackground />
+      <TerminalComponent />
       <footer className=""></footer>
     </>
   );
