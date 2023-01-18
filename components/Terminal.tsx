@@ -56,7 +56,7 @@ function TerminalComponent() {
     };
     initializeTerminal();
   }, []);
-  return <div id="terminal" className="pt-44" />;
+  return <div id="terminal" className="fixed bottom-56 left-1/4 w-1/2 h-1/2" />;
 }
 
 export default TerminalComponent;
