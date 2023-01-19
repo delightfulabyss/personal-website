@@ -9,7 +9,7 @@ interface NextApiCommandRequest extends NextApiRequest {
 }
 
 const commands =
-  "Here are a list of commands that are available: \r\n\r\n\thelp\t\tA list of available commands\r\n\tens\t\tMy ens\r\n\tabout\t\tAbout me\r\n\tinterests\tMy interests\r\n\tprojects\tCurrent and past project links\r\n\tcontact\t\tRelevant social links\r\n\tclear\t\tClear the terminal";
+  "Here is a list of commands that are available: \r\n\r\n\thelp\t\tA list of available commands\r\n\tens\t\tMy ens\r\n\tabout\t\tAbout me\r\n\tinterests\tMy interests\r\n\tprojects\tCurrent and past project links\r\n\tcontact\t\tRelevant social links\r\n\tclear\t\tClear the terminal";
 
 const responses: { [key: string]: string } = {
   help: `Welcome to my terminal! ${commands}`,
@@ -19,8 +19,8 @@ const responses: { [key: string]: string } = {
   interests: "music, photography, Dungeons and Dragons, horror movies, travel, meditation, self-improvement, nature",
   projects:
     "Current projects: https://www.ambire.com, https://www.cabin.city\r\nPrevious projects: https://www.climatefutures.io, https://www.chainsaw.fun",
-  contact:
-    "email: mattwatman@gmail.com,\r\ntwitter: https://www.twitter.com/delightfulabyss,\r\ngithub: https://www.github.com/delightfulabyss,\r\ndiscord: delightfulabyss.eth#3679",
+  socials:
+    "\x1b]8;;https://www.github.com/delightfulabyss\x07github\x1b]8;;\x07\r\n\x1b]8;;https://www.twitter.com/delightfulabyss\x07twitter\x1b]8;;\x07\r\n\x1b]8;;https://www.discordapp.com/users/612321813405499509\x07discord\x1b]8;;\x07\r\n\x1b]8;;https://www.linkedin.com/in/matthewwatman\x07linkedin\x1b]8;;\x07",
   clear: "clear",
 };
 
