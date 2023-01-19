@@ -8,15 +8,18 @@ function VideoBackground() {
     }
   };
   return (
-    <video
-      className="fixed right-0 bottom-0 min-w-full min-h-full"
-      ref={videoRef}
-      onCanPlay={() => setPlaybackSpeed()}
-      src="/smoke.mp4"
-      autoPlay
-      loop
-      muted
-    ></video>
+    <div className="relative">
+      <video
+        className="fixed right-0 bottom-0 min-w-full min-h-full"
+        ref={videoRef}
+        onCanPlay={() => setPlaybackSpeed()}
+        src="/smoke.mp4"
+        autoPlay
+        loop
+        muted
+      ></video>{" "}
+      <div className="fixed inset-0 min-w-full min-h-full bg-purple-800/40"></div>
+    </div>
   );
 }
 
