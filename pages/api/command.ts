@@ -9,7 +9,7 @@ interface NextApiCommandRequest extends NextApiRequest {
 }
 
 const commands =
-  "Here is a list of commands that are available: \r\n\r\n\thelp\t\tA list of available commands\r\n\tens\t\tMy ens\r\n\tabout\t\tAbout me\r\n\tinterests\tMy interests\r\n\tprojects\tCurrent and past project links\r\n\tcontact\t\tRelevant social links\r\n\tclear\t\tClear the terminal";
+  "Here is a list of commands that are available: \r\n\r\n\thelp\t\tA list of available commands\r\n\tens\t\tMy ens\r\n\tabout\t\tAbout me\r\n\tinterests\tMy interests\r\n\tprojects\tCurrent and past project links\r\n\tsocials\t\tRelevant social links\r\n\tclear\t\tClear the terminal";
 
 const responses: { [key: string]: string } = {
   help: `Welcome to my terminal! ${commands}`,
