@@ -8,6 +8,7 @@ export default function Home() {
       <Head>
         <title>delightfulabyss.eth</title>
         <meta name="description" content="" />
+        <link rel="shortcut icon" href="/smoke.jpg" />
       </Head>
       <VideoBackground />
       <TerminalComponent />
