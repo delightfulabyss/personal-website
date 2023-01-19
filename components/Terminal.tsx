@@ -19,12 +19,12 @@ function TerminalComponent() {
       fitAddon.fit();
       term.write(termPrefix + "help");
       term.onKey(({ key, domEvent }) => {
-        if (domEvent.keyCode === 13) {
+        if (domEvent.key === "Enter") {
           if (curr_line) {
             entries.push(curr_line);
             query(curr_line);
           }
-        } else if (domEvent.keyCode === 8) {
+        } else if (domEvent.key === "Backspace") {
           if (curr_line) {
             curr_line = curr_line.slice(0, curr_line.length - 1);
             term.write("\b \b");
