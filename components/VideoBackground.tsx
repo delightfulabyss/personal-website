@@ -18,7 +18,7 @@ function VideoBackground() {
         loop
         muted
       ></video>{" "}
-      <div className="fixed inset-0 min-w-full min-h-full bg-purple-600/40"></div>
+      <div className="fixed inset-0 min-w-full min-h-full bg-purple-500/40"></div>
     </div>
   );
 }
