@@ -4,7 +4,7 @@ function VideoBackground() {
   const videoRef = useRef<null | HTMLVideoElement>(null);
   const setPlaybackSpeed = () => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.3;
+      videoRef.current.playbackRate = 0.25;
     }
   };
   return (
@@ -13,11 +13,12 @@ function VideoBackground() {
         className="fixed right-0 bottom-0 min-w-full min-h-full"
         ref={videoRef}
         onCanPlay={() => setPlaybackSpeed()}
-        src="/smoke.mp4"
         autoPlay
         loop
         muted
-      ></video>{" "}
+      >
+        <source src="smoke.mp4" type="video/mp4" />
+      </video>
       <div className="fixed inset-0 min-w-full min-h-full bg-purple-500/40"></div>
     </div>
   );
