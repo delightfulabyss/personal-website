@@ -12,7 +12,7 @@ const commands =
 	"Here is a list of commands that are available: \r\n\r\n\thelp\t\tA list of available commands\r\n\tens\t\tMy ens\r\n\tabout\t\tAbout me\r\n\tinterests\tMy interests\r\n\tprojects\tCurrent and past project links\r\n\tsocials\t\tRelevant social links\r\n\tclear\t\tClear the terminal";
 
 const responses: { [key: string]: string } = {
-	help: `Welcome to my terminal! ${commands}`,
+	help: `Welcome to my terminal! To use a command, type the name and hit enter. ${commands}`,
 	ens: "delightfulabyss.eth",
 	about:
 		"Hi there! My name is Matthew and I am a full-stack decentralized application developer in the Ethereum blockchain ecosystem. My career started in the nonprofit industry where I came in ready to help people and make change in the world and left completely frustrated at the lack of resourcing and misaligned incentives inherent in the industry. When I discovered blockchain and cryptocurrencies and learned the values baked into the technology, I knew I wanted to be a part of that reimagining of society. Now I work with individuals and organizations of all kinds to develop applications based on smart contracts, unstoppable pieces of code deployed on blockchains. I'm still a mission-driven person at heart, and I am specificially interested in the growing regenerative economics movement within the Crypto industry.\r\n\r\nFeel free to say hey if you think we could collaborate!",
