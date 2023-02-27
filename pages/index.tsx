@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <VideoBackground />
       <TerminalComponent />
-      <footer className=""></footer>
+      <footer className="" />
     </>
   );
 }
