@@ -16,10 +16,9 @@ const responses: { [key: string]: string } = {
 	ens: "delightfulabyss.eth",
 	about:
 		"Hi there! My name is Matthew and I am a full-stack decentralized application developer in the Ethereum blockchain ecosystem. My career started in the nonprofit industry where I came in ready to help people and make change in the world and left completely frustrated at the lack of resourcing and misaligned incentives inherent in the industry. When I discovered blockchain and cryptocurrencies and learned the values baked into the technology, I knew I wanted to be a part of that reimagining of society. Now I work with individuals and organizations of all kinds to develop applications based on smart contracts, unstoppable pieces of code deployed on blockchains. I'm still a mission-driven person at heart, and I am specificially interested in the growing regenerative economics movement within the Crypto industry.\r\n\r\nFeel free to say hey if you think we could collaborate!",
-	interests:
-		"music, photography, Dungeons and Dragons, horror movies, travel, meditation, self-improvement, nature",
+	interests: "music, photography, Dungeons and Dragons, horror movies, travel, meditation, self-improvement, nature",
 	projects:
-		"Current projects: https://www.ambire.com, https://www.cabin.city\r\nPrevious projects: https://www.climatefutures.io, https://www.chainsaw.fun",
+		"Current projects: https://www.solidityguild.com, https://www.plantgang.xyz, https://www.ambire.com, https://www.cabin.city\r\nPrevious projects: https://www.climatefutures.io, https://www.chainsaw.fun",
 	socials:
 		"\x1b]8;;https://www.github.com/delightfulabyss\x07github\x1b]8;;\x07\r\n\x1b]8;;https://www.twitter.com/delightfulabyss\x07twitter\x1b]8;;\x07\r\n\x1b]8;;https://www.discordapp.com/users/612321813405499509\x07discord\x1b]8;;\x07\r\n\x1b]8;;https://www.linkedin.com/in/matthewwatman\x07linkedin\x1b]8;;\x07",
 	clear: "clear",
