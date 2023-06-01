@@ -1,11 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { ParsedUrlQuery } from "querystring";
+import { NextRequest, NextResponse } from "next/server";
 
-interface CommandQuery extends ParsedUrlQuery {
-	command: string;
-}
-interface NextApiCommandRequest extends NextApiRequest {
-	query: CommandQuery;
+interface ResponseData {
+	result: string;
 }
 
 const commands =
@@ -24,13 +20,12 @@ const responses: { [key: string]: string } = {
 	clear: "clear",
 };
 
-const commandHandler = (req: NextApiCommandRequest, res: NextApiResponse) => {
-	const { command } = req.query;
-	if (!Object.keys(responses).includes(command)) {
-		res.status(404).json({ result: `Command not found. ${commands}` });
+export function GET(req: NextRequest): NextResponse<ResponseData> {
+	const command = req.nextUrl.searchParams.get("command");
+	if (!command || !Object.keys(responses).includes(command)) {
+		return NextResponse.json({ result: `Command not found. ${commands}` });
 	} else {
 		const result = responses[command];
-		res.status(200).json({ result });
+		return NextResponse.json({ result });
 	}
-};
-export default commandHandler;
+}
